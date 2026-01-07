@@ -1,30 +1,62 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reloj Mundial</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="card">
-    <h1>Reloj Mundial</h1>
+  <main class="wrap">
+    <header class="header">
+      <h1>Reloj Mundial</h1>
+      <p class="subtitle">Bogotá fijo + otro país a elección (con verificación de API).</p>
+    </header>
 
-    <label for="tz">Zona horaria:</label>
-    <select id="tz">
-      <option value="America/Bogota">Bogotá</option>
-      <option value="America/Mexico_City">Ciudad de México</option>
-      <option value="America/New_York">Nueva York</option>
-      <option value="Europe/Madrid">Madrid</option>
-      <option value="UTC">UTC</option>
-    </select>
+    <section class="grid">
+      <!-- Reloj Bogotá -->
+      <article class="card">
+        <div class="cardTop">
+          <h2>Bogotá</h2>
+          <span id="statusBogota" class="badge badge-warn">Sin sincronizar</span>
+        </div>
 
-    <div class="time" id="clock">--:--:--</div>
-    <div class="small" id="iso">...</div>
+        <div class="time" id="timeBogota">--:--:--</div>
+        <div class="iso" id="isoBogota">—</div>
 
-    <div class="small">
-      Prueba API: <a href="/api/time" target="_blank">/api/time</a>
-    </div>
+        <div class="meta">
+          <div>Últ. sync: <span id="lastSyncBogota">—</span></div>
+          <div>Diferencia vs tu PC: <span id="driftBogota">—</span></div>
+          <div>API: <a id="apiLinkBogota" href="/api/time?tz=America/Bogota" target="_blank">/api/time?tz=America/Bogota</a></div>
+        </div>
+      </article>
+
+      <!-- Reloj Seleccionable -->
+      <article class="card">
+        <div class="cardTop">
+          <div>
+            <h2>Otro país</h2>
+            <label class="label" for="tzSelect">Zona horaria:</label>
+            <select id="tzSelect"></select>
+          </div>
+
+          <span id="statusSelected" class="badge badge-warn">Sin sincronizar</span>
+        </div>
+
+        <div class="time" id="timeSelected">--:--:--</div>
+        <div class="iso" id="isoSelected">—</div>
+
+        <div class="meta">
+          <div>Últ. sync: <span id="lastSyncSelected">—</span></div>
+          <div>Diferencia vs tu PC: <span id="driftSelected">—</span></div>
+          <div>API: <a id="apiLinkSelected" href="/api/time" target="_blank">/api/time</a></div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <small>Tip: si “Diferencia vs tu PC” es grande, tu PC puede tener la hora desajustada.</small>
+    </footer>
   </main>
 
   <script src="app.js"></script>
