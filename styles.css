@@ -1,0 +1,37 @@
+body {
+    font-family: system-ui, Arial, sans-serif;
+    background: #0b1220;
+    color: #e8eefc;
+    margin: 0;
+    padding: 32px;
+  }
+  
+  .card {
+    max-width: 520px;
+    margin: 0 auto;
+    background: #111a2e;
+    border: 1px solid #223055;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  
+  .time {
+    font-size: 56px;
+    margin: 16px 0;
+    font-weight: 700;
+  }
+  
+  .small {
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  
+  select {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #223055;
+    background: #0b1220;
+    color: #e8eefc;
+  }
+  a { color: #9cc2ff; }

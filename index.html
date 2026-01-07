@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reloj Mundial</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Reloj Mundial</h1>
+
+    <label for="tz">Zona horaria:</label>
+    <select id="tz">
+      <option value="America/Bogota">Bogotá</option>
+      <option value="America/Mexico_City">Ciudad de México</option>
+      <option value="America/New_York">Nueva York</option>
+      <option value="Europe/Madrid">Madrid</option>
+      <option value="UTC">UTC</option>
+    </select>
+
+    <div class="time" id="clock">--:--:--</div>
+    <div class="small" id="iso">...</div>
+
+    <div class="small">
+      Prueba API: <a href="/api/time" target="_blank">/api/time</a>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
